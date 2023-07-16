@@ -217,10 +217,19 @@ func do_picks(k int) []Pick {
 }
 
 func main() {
-	k, err := strconv.Atoi(os.Args[1])
-	if err != nil {
-		panic(err)
+	var k int
+	var err error
+	if len(os.Args) < 2 {
+		k = 5
+	} else {
+		k, err = strconv.Atoi(os.Args[1])
+		if err != nil {
+			panic(err)
+		}
 	}
+
+	fmt.Println(k)
+
 	picks := do_picks(k)
 
 	for i := 0; i < k; i++ {
