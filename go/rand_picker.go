@@ -228,7 +228,6 @@ func main() {
 		}
 	}
 
-	fmt.Println(k)
 
 	picks := do_picks(k)
 
